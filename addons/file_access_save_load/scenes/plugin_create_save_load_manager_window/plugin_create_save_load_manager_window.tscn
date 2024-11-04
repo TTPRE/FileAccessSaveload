@@ -1,0 +1,201 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3k55l8mcxluh"]
+
+[ext_resource type="Script" path="res://addons/file_access_save_load/scenes/plugin_create_save_load_manager_window/plugin_create_save_load_manager_window.gd" id="1_ye8x6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vosrd"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[node name="PluginCreateSaveLoadManagerWindow" type="Window"]
+title = "Create SaveLoadManager"
+position = Vector2i(0, 36)
+size = Vector2i(1000, 600)
+min_size = Vector2i(1000, 600)
+script = ExtResource("1_ye8x6")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vosrd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Max Save Number:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="LineEditMaxSaveNumber" type="LineEdit" parent="Panel/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "1"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer4/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Save File Name:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer4/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer4/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+text = "user://"
+
+[node name="LineEditSaveFileName" type="LineEdit" parent="Panel/VBoxContainer/MarginContainer4/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "save.sav"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer5/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Save File Password:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="LineEditSaveFilePassword" type="LineEdit" parent="Panel/VBoxContainer/MarginContainer5/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "no password"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "SaveData Script Path:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="LineEditSaveDataScriptPath" type="LineEdit" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="ButtonChooseSaveDataScriptPath" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Choose SaveData Script Path"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "SaveLoadManger Script Path:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="LineEditSaveLoadMangerScriptPath" type="LineEdit" parent="Panel/VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="ButtonSetManagerScriptPath" type="Button" parent="Panel/VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Set SaveLoadManager Script Path"
+
+[node name="MarginContainer6" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="ButtonOK" type="Button" parent="Panel/VBoxContainer/MarginContainer6/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "OK "
+
+[node name="ButtonCancel" type="Button" parent="Panel/VBoxContainer/MarginContainer6/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Cancel "
+
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/ButtonChooseSaveDataScriptPath" to="." method="_on_button_choose_save_data_script_path_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/ButtonSetManagerScriptPath" to="." method="_on_button_set_manager_script_path_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer6/HBoxContainer/ButtonOK" to="." method="_on_button_ok_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer6/HBoxContainer/ButtonCancel" to="." method="_on_button_cancel_pressed"]
