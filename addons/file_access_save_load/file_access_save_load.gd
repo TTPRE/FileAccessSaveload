@@ -23,7 +23,7 @@
 ##----------------------------------------------------##
 ## @Auther: 2000
 ## @Date: 2024-11-02
-## @LastEditTime: 2024-11-04
+## @LastEditTime: 2024-11-09
 ## @Tags: 存档, 生成
 ## @Version: 1.0.0
 ## @License: MIT license
@@ -39,13 +39,13 @@ var plugin_generate_serialize_function : PluginGenerateSerializeFunction
 
 func _enter_tree() -> void:
 	initialize()
-	add_config_table_csv_menu()
+	add_tool_menu()
 	print("Enable FileAccessSaveLoad")
 	pass
 
 
 func _exit_tree() -> void:
-	remove_config_table_csv_menu()
+	remove_tool_menu()
 	destroy()
 	print("Disable FileAccessSaveLoad")
 	pass
@@ -66,19 +66,19 @@ func destroy() -> void:
 	pass
 
 
-func add_config_table_csv_menu() -> void:
-	var popup_menu_config_table_csv : PopupMenu = PopupMenu.new()
+func add_tool_menu() -> void:
+	var popup_menu : PopupMenu = PopupMenu.new()
 	
-	popup_menu_config_table_csv.add_item("Generate Serialize Function", PluginFASLConfigHelper.ID_GENERATE_SERIALIZE_FUNCTION)
-	popup_menu_config_table_csv.id_pressed.connect(plugin_generate_serialize_function.show_editor_file_dialog)
+	popup_menu.add_item("Generate Serialize Function", PluginFASLConfigHelper.ID_GENERATE_SERIALIZE_FUNCTION)
+	popup_menu.id_pressed.connect(plugin_generate_serialize_function.show_editor_file_dialog)
 	
-	popup_menu_config_table_csv.add_item("Create Save Load Manager", PluginFASLConfigHelper.ID_CREATE_SAVE_LOAD_MANAGER)
-	popup_menu_config_table_csv.id_pressed.connect(plugin_create_save_load_manager.show_editor_file_dialog)
+	popup_menu.add_item("Create Save Load Manager", PluginFASLConfigHelper.ID_CREATE_SAVE_LOAD_MANAGER)
+	popup_menu.id_pressed.connect(plugin_create_save_load_manager.show_editor_file_dialog)
 	
-	add_tool_submenu_item("FileAccess Save Load", popup_menu_config_table_csv)
+	add_tool_submenu_item("FileAccess Save Load", popup_menu)
 	pass
 
 
-func remove_config_table_csv_menu() -> void:
+func remove_tool_menu() -> void:
 	remove_tool_menu_item("FileAccess Save Load")
 	pass
